@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('./assets/dotnoise-light-grey.png'); /* Substitua pelo caminho e nome correto */
+  background-repeat: repeat; /* Para repetir a textura em todo o fundo */
 }
 
 code {

@@ -1,0 +1,22 @@
+/* // Body.css */
+.body {
+  padding: 20px;
+  background-color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  color: #454431;
+  line-height: 1.6;
+  flex: 1;
+  background-image: url('../assets/dotnoise-light-grey.png'); /* Substitua pelo caminho e nome correto */
+  background-repeat: repeat; /* Para repetir a textura em todo o fundo */
+}
+
+.body-content {
+  padding-top: 150px; /* Adicione padding igual à altura do Header */
+  padding-bottom: 60px; /* Adicione padding para o Footer */
+  width: 100%;
+  flex: 1;
+}
+
+.section {
+  margin-bottom: 40px;
+}

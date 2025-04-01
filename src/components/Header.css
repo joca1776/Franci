@@ -1,0 +1,284 @@
+
+
+/* Header Principal */
+.header {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: "Montserrat", sans-serif;
+  flex-wrap: wrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+/* Logo */
+.logo {
+  width: 100px;
+  height: auto;
+  margin-right: 20px;
+  padding-left: 40px;
+}
+
+/* Lista de navegação (para desktop) */
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  gap: 100px;
+  transition: all 0.3s ease;
+}
+
+/* Link de navegação */
+.nav-link {
+  color: #d4c28a;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: "Asbigan", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #daB436;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 6px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #d4c28a;
+  transition: all 0.3s ease;
+}
+
+.bar.open:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.bar.open:nth-child(2) {
+  opacity: 0;
+}
+
+.bar.open:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Side Menu */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -250px; /* Menu vem da direita */
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: white;
+  transition: all 0.3s ease;
+  z-index: 101;
+  overflow-y: auto;
+  padding-top: 100px;
+}
+
+.side-menu.open {
+  right: 0; /* Menu aparece da direita */
+}
+
+.side-nav-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-nav-list li {
+  padding: 15px;
+  text-align: left;
+}
+
+.side-nav-list .nav-link {
+  color: #d4c28a;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: "Asbigan", sans-serif;
+  transition: color 0.3s ease;
+  display: block;
+}
+
+.side-nav-list .nav-link:hover {
+  color: #daB436;
+}
+
+/* Gradiente Animado */
+.gradient-background {
+  background: linear-gradient(300deg, #ffffff, #d8cba3, #454431, #da8436);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+}
+
+/* ... estilos existentes ... */
+
+/* Estilo para o botão de fechar o menu lateral */
+.close-menu {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 102; /* Garante que o botão fique acima do menu lateral */
+}
+
+/* ... estilos para o side-menu ... */
+
+/* Animação do Gradiente */
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Media Queries para dispositivos móveis */
+@media (max-width: 768px) {
+  .header {
+    height: 100px;
+    padding: 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; /* Ajuste para o hamburguer ficar na direita */
+  }
+
+  .logo {
+    width: 100px;
+    padding-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+
+  .nav-list {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: flex;
+    align-self: center;
+    margin-right: 20px; /* Margem de 2px do canto direito */
+  }
+}
+
+
+/* ------------------------------------------- */
+
+/* Header.css */
+
+/* ... (todos os seus estilos existentes) ... */
+
+
+/* --- ESTILOS PARA A BARRA DE LETREIRO (TICKER) --- */
+
+.ticker-bar {
+  background-color: #454431; /* Cor de fundo escura (combine com seu design) */
+  color: #d4c28a; /* Cor do texto (dourado/bege) */
+  padding: 8px 0; /* Espaçamento vertical */
+  width: 100%;
+  overflow: hidden; /* Essencial: esconde o texto fora da barra */
+  white-space: nowrap; /* Impede que o texto quebre linha */
+  position: fixed; /* Fixa a barra abaixo do header */
+  top: 100px; /* Altura do seu header principal */
+  left: 0;
+  z-index: 99; /* Abaixo do z-index do header (100) */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+  font-family: "Montserrat", sans-serif; /* Ou outra fonte */
+  font-size: 0.9rem; /* Tamanho do texto */
+}
+
+.ticker-text {
+  display: inline-block; /* Necessário para a animação de transform */
+  /* Animação: nome, duração, timing, repetição */
+  animation: marquee 30s linear infinite;
+  /* Pausa a animação ao passar o mouse (opcional) */
+  /* &:hover { animation-play-state: paused; } */
+  will-change: transform; /* Otimização para o navegador */
+}
+
+/* Animação do Letreiro */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%); /* Começa com a primeira cópia visível */
+  }
+  100% {
+    /* Move para a esquerda exatamente o tamanho de uma cópia do texto.
+       Como duplicamos o texto, mover -50% do total faz o loop parecer contínuo. */
+    transform: translateX(-50%);
+  }
+}
+
+/* Header.css */
+
+/* ... (outros estilos) ... */
+
+.ticker-text {
+  display: inline-block;
+  animation: marquee 30s linear infinite;
+  will-change: transform;
+  /* ADICIONE ESTA LINHA: */
+  word-spacing: 10px; /* Ajuste o valor (ex: 5px, 15px, 0.5em) conforme necessário */
+}
+
+/* ... (@keyframes marquee e outros estilos) ... */
+
+/* Ajuste opcional para telas menores se o texto ficar muito rápido ou pequeno */
+@media (max-width: 768px) {
+  .ticker-bar {
+    /* top: 80px; */ /* Ajuste se a altura do header mudar no mobile */
+    font-size: 0.8rem;
+  }
+
+  .ticker-text {
+     /* Poderia ajustar a duração da animação se necessário */
+     /* animation-duration: 20s; */
+  }
+}
+
+/* Ajuste opcional para telas menores */
+/* Ajuste opcional para telas menores */
+@media (max-width: 768px) {
+  .ticker-bar {
+    /* Se a altura do header mudar no mobile, ajuste o 'top' aqui */
+    /* top: 80px; */
+    font-size: 0.85rem; /* Aumentei um pouco a fonte também */
+    padding: 10px 0;  /* Manti um padding razoável */
+    min-height: 35px; /* Define uma altura mínima (ajuste o valor conforme necessário) */
+    display: flex;    /* Habilita flexbox para alinhamento */
+    align-items: flex-end; /* Centraliza o texto verticalmente */
+  }
+
+  .ticker-text {
+     /* A duração menor torna a animação mais rápida */
+     /* animation-duration: 20s; */
+  }
+
+  /* ... (outros estilos mobile que você já tenha) ... */
+}
+
+/* ------------------------------------------- */
