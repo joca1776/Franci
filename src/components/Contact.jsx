@@ -3,8 +3,6 @@ import dotNoiseImage from "../assets/dotnoise-light-grey.png";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 
-
-
 const Contact = () => {
   const containerStyle = {
     display: "flex",
@@ -13,31 +11,26 @@ const Contact = () => {
     alignItems: "center",
     minHeight: "100vh",
     backgroundColor: "#ffffff",
-    // Mantido o padding original do container de contato, ajuste se necessário
     padding: "170px 20px 80px 20px",
     width: "100%",
     margin: "0",
     boxSizing: "border-box",
-    gap: "20px", // Gap entre itens diretos dentro do container (neste caso, só o contactStyle div)
+    gap: "20px",
     backgroundImage: `url(${dotNoiseImage})`,
   };
 
-  // --- ESTILO ATUALIZADO ---
   const contactStyle = {
     backgroundColor: "#d8cba3",
     color: "#ffffff",
-    padding: "30px 20px", // <--- ATUALIZADO para igualar servicesHeaderStyle
+    padding: "30px 20px",
     borderRadius: "20px",
     textAlign: "center",
-    fontFamily: "'Asbigan', sans-serif", // Certifique-se que a fonte está carregada
-    width: "calc(100% - 40px)", // <--- ATUALIZADO para igualar servicesHeaderStyle
-    maxWidth: "1200px", // <--- ATUALIZADO para igualar servicesHeaderStyle
+    fontFamily: "'Asbigan', sans-serif",
+    width: "calc(100% - 40px)",
+    maxWidth: "1200px",
     boxSizing: "border-box",
-    marginBottom: '20px', // <--- ADICIONADO para igualar servicesHeaderStyle (opcional, para espaçamento)
-    // Se precisar de mais espaço interno vertical, pode aumentar o padding top/bottom aqui:
-    // padding: "50px 20px", // Exemplo com mais padding vertical
+    marginBottom: '20px',
   };
-  // --- FIM DA ATUALIZAÇÃO ---
 
   const phoneLinkStyle = {
     color: "white",
@@ -47,13 +40,21 @@ const Contact = () => {
   const instagramLinkStyle = {
     color: "white",
     textDecoration: "none",
-    wordWrap: "break-word",
-    overflowWrap: "break-word",
+    wordWrap: "break-word",      // Já estava aqui, ótimo!
+    overflowWrap: "break-word", // Boa prática incluir o padrão atual
   };
+
+  // --- ESTILO PARA O EMAIL (NOVO) ---
+  const emailStyle = {
+    overflowWrap: 'break-word', // Permite quebrar palavras longas para evitar overflow
+    wordWrap: 'break-word',      // Alias para compatibilidade com navegadores mais antigos
+    // Alternativa mais agressiva (quebra em qualquer caractere):
+    // wordBreak: 'break-all',
+  };
+  // --- FIM DA ADIÇÃO ---
 
   return (
     <div style={containerStyle}>
-      {/* O div abaixo agora usará o contactStyle atualizado */}
       <div className="contact-page" style={contactStyle}>
         <h1>Contato</h1>
         <p>
@@ -64,19 +65,21 @@ const Contact = () => {
             rel="noopener noreferrer"
             style={phoneLinkStyle}
           >
-          +55 44 8438-5955
+           +55 44 8438-5955
           </a>
         </p>
-        <p>Atendimento@littacortinasepersianas.com.br</p>
+        {/* Aplicar o novo estilo ao parágrafo do email */}
+        <p style={emailStyle}>
+          Atendimento@littacortinasepersianas.com.br
+        </p>
         <p>
         <FaInstagram />
           <a
             href="https://www.instagram.com/littacortinasepersianas/"
             target="_blank"
             rel="noopener noreferrer"
-            style={instagramLinkStyle}
+            style={instagramLinkStyle} // O estilo do link já ajuda, mas o problema é no <p> pai
           >
-            {/* É uma boa prática não repetir URLs longas como texto visível */}
             @littacortinasepersianas
           </a>
         </p>

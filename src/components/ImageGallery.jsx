@@ -2,10 +2,10 @@
 import React from 'react';
 
 // --- Imports das imagens diretamente aqui ---
-import img1 from '../assets/009.jpg';
+import img1 from '../assets/014.jpg';
 import img2 from '../assets/010.jpg';
 import img3 from '../assets/011.jpg';
-import img4 from '../assets/012.jpg';
+import img4 from '../assets/015.jpg';
 import img5 from '../assets/013.jpg';
 // -------------------------------------------
 

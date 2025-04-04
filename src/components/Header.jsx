@@ -12,7 +12,7 @@ const Header = () => {
   };
 
   // Texto para o letreiro
-  const tickerText = "Nossos Modelos: Vertical - Horizontal - Rolo - Romana - Painel - Prega Wave - Prega Macho - Prega Fêmea - Prega Americana - Xales";
+  const tickerText = "Nossos Modelos de Persianas: Vertical - Horizontal - Rolo - Romana - Painel | Cortinas: Prega Wave - Prega Macho - Prega Fêmea - Prega Americana - Xales";
 
   return (
     // Usa um Fragmento <> para retornar múltiplos elementos
