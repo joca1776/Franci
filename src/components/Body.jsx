@@ -5,6 +5,7 @@ import Poster from "./Poster";
 import ImageGallery from "./ImageGallery"; // Importa a galeria
 import ProductList from "./ProductList";   // Importa a lista
 import "./Body.css"; // Importando o CSS externo
+import FloatingWhatsAppButton from "./FloatingWhatsAppButton";
 
 const Body = () => {
   return (
@@ -16,6 +17,7 @@ const Body = () => {
       <div className="section">
         <Jumbotron />
         <ImageGallery />
+        <FloatingWhatsAppButton />
 
       </div>
     </main>
